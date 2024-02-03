@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import { DefaultDate } from "components/types";
-import usePrevLocation from "components/Calendar/usePrevLocation";
 import EventsCalendar from "components/Calendar";
+import usePrevLocation from "./usePrevLocation";
 import {
   selectedDate,
   getDefaultDate,

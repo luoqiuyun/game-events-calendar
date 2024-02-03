@@ -13,13 +13,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 300px;
-  position: relative;
 }
 .about-event {
-  position: absolute;
-  top: 10px;
-  left: 50px;
-  height: 250px;
+  margin-left: 50px;
+  height: 260px;
   color: #999;
   display: flex;
   flex-direction: column;
