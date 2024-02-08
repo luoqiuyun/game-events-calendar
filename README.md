@@ -7,6 +7,7 @@ that displays upcoming video games launches. [Google Share Link](https://drive.g
 #
 ## App Features
 
+- Responsive
 - URL driven dynamic events calendar in a "Monthly" view
 - Provide 'Previous' and 'Next' buttons to allow navigation between months
 - Visiting an invalid date (pathname) will be redirected to the current date
@@ -16,11 +17,30 @@ that displays upcoming video games launches. [Google Share Link](https://drive.g
 - react router
 - typescript
 - CSS Grid
-- unit testing
+- unit testing with RTL and Jest
 - JAMstack Serverless with Netlify function API services
 
 The above features were implemented in order to compliant to the assignment requirments:
 - Mastery of React/JavaScript/TypeScript, HTML, CSS, and other aspects of UI 
+
+## Tested on latest
+
+- Chrome
+- Edge
+- Firefox
+- iPhone-12Pro
+- iPhone-14Pro-Max
+- iPhone-SE
+- iPhone-XR
+- iPad-Air
+- iPad-Mini
+- iPad-Pro
+- Galaxy-Fold
+- Samsung-Galaxy-A51-71
+- Samsung-Galaxy-S20-Ultra
+- Samsung-Galaxy-S8
+- Surface-Duo
+- Surface-Pro7
 
 
 ### [DEMO](https://cool-sawine-66ea12.netlify.app/)
