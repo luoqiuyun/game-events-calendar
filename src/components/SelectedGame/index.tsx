@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import './styles.css';
-import { nthNumber, getMonthNames, removeTags } from "./helpers";
+import { nthNumber, getMonthNames, removeTags } from "components/helpers";
 import { SelectedGameProps } from "components/types";
 
 const SelectedGame: React.FC<SelectedGameProps> = ({ game, images }) => {

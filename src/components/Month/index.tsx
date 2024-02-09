@@ -11,6 +11,8 @@ const Month: React.FC<MonthProps> = ({ calendar }) => {
   const [weekSelected, setWeekSelected] = useState<number | null>(null);
   const [gameSelected, setGameSelected] = useState<Game | null>(null);
   const [games, setGames] = useState<Game[]>(events);
+  const eventImages = getImageList();
+  const location = useLocation();
 
   useEffect(() => {
     fetch('/api/games')
@@ -27,8 +29,6 @@ const Month: React.FC<MonthProps> = ({ calendar }) => {
     setGameSelected(null);
   }, [calendar]);
 
-  const eventImages = getImageList();
-  const location = useLocation();
   const selectedCalendar = useMemo(() => 
     getCalendar(
       calendar,
@@ -48,8 +48,9 @@ const Month: React.FC<MonthProps> = ({ calendar }) => {
             setWeekSelected={setWeekSelected}
             setGameSelected={setGameSelected}
           />
-          {weekSelected === i && gameSelected &&
-            <SelectedGame game={gameSelected} images={eventImages} />
+          {weekSelected === i
+            && gameSelected
+            && <SelectedGame game={gameSelected} images={eventImages} />
           }
         </React.Fragment>
       )}

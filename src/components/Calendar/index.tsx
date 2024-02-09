@@ -20,12 +20,12 @@ const Calendar: React.FC<CalendarProps> = ({calendar, setCalenda}) => {
   const nextMonth = () => {
     const nextDate = next(calendar);
     setCalenda(nextDate);
-  }
+  };
 
   const prevMonth = () => {
     const prevDate = prev(calendar);
     setCalenda(prevDate);
-  }
+  };
 
   return (
     <div className="calendar-container">

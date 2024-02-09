@@ -11,7 +11,6 @@ import {
 
 const DynamicCalendar: React.FC = () => {
   const [calendar, setCalenda] = useState<DefaultDate>(getDefaultDate());
-
   const location = useLocation();
   const prevLocation = usePrevLocation(location);
 
