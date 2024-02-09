@@ -13,6 +13,7 @@ describe('Week component', () => {
       <Week
         week={1}
         days={mockGames}
+        gameSelected={mockGames[0]}
         setWeekSelected={setWeekSelected}
         setGameSelected={setGameSelected}
         images={mockWeekImages}

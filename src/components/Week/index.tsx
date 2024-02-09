@@ -6,6 +6,7 @@ import WeekDay from "components/WeekDay";
 type WeekProps = {
   week: number;
   days: Game[];
+  gameSelected: Game | null;
   setWeekSelected: (week: number | null) => void;
   setGameSelected: (game: Game | null) => void;
   images: Images;
@@ -15,6 +16,7 @@ const Week: React.FC<WeekProps> = ({
   week,
   days,
   images,
+  gameSelected,
   setWeekSelected,
   setGameSelected
 }) => {
@@ -27,6 +29,7 @@ const Week: React.FC<WeekProps> = ({
           game={game}
           images={images}
           week={week}
+          gameSelected={gameSelected}
           setWeekSelected={setWeekSelected}
           setGameSelected={setGameSelected}
         />

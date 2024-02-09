@@ -13,6 +13,7 @@ describe('WeekDay component', () => {
       <WeekDay
         game={mockGames[0]}
         week={1}
+        gameSelected={mockGames[0]}
         setWeekSelected={setWeekSelected}
         setGameSelected={setGameSelected}
         images={mockImages}
@@ -35,6 +36,7 @@ describe('WeekDay component', () => {
     render(
       <WeekDay
         week={1}
+        gameSelected={mockGames[0]}
         setWeekSelected={setWeekSelected}
         setGameSelected={setGameSelected}
         images={mockImages}

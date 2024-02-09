@@ -5,6 +5,7 @@ import { Game, Images } from "components/types";
 type WeekDayProps = {
   game?: Game;
   week: number;
+  gameSelected: Game | null;
   setWeekSelected: (week: number | null) => void;
   setGameSelected: (game: Game | null) => void;
   images: Images;
@@ -14,6 +15,7 @@ const WeekDay: React.FC<WeekDayProps> = ({
   game,
   week,
   images,
+  gameSelected,
   setWeekSelected,
   setGameSelected
 }) => {
@@ -25,6 +27,12 @@ const WeekDay: React.FC<WeekDayProps> = ({
   let cardClass = addEvent ? "card game-event" : "card";
   cardClass = !!game && !game.prevMonth ? cardClass:`${cardClass} prev-month`;
 
+  const border = addEvent
+    && game
+    && !!gameSelected
+    && gameSelected.dom === game.dom
+    ? `3px solid DodgerBlue` : 'none';
+
   const selectedEvent = () => {
     if (!addEvent || !game) return;
     setWeekSelected(week);
@@ -34,7 +42,10 @@ const WeekDay: React.FC<WeekDayProps> = ({
   return (
     <div role="button"
       className={cardClass}
-      style={{ backgroundImage: `url(${imgUrl})` }}
+      style={{
+        backgroundImage: `url(${imgUrl})`,
+        borderRight: border
+      }}
       onClick={selectedEvent}
     >
       {addEvent &&

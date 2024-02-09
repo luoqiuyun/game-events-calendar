@@ -48,6 +48,7 @@ const Month: React.FC<MonthProps> = ({ calendar }) => {
             week={i}
             days={week}
             images={eventImages}
+            gameSelected={gameSelected}
             setWeekSelected={setWeekSelected}
             setGameSelected={setGameSelected}
           />
