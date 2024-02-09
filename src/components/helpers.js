@@ -140,9 +140,10 @@ const prev = (calendar) => {
 
 const getPrecedentMonthDays = (location) => {
   let { year, month } = getPathDate(location);
-
   month -= 1;
-  if (month === 1) year -= 1;
+  year = month !== 1
+    ? year
+    : year - 1;
   return daysInMonth(year, month);
 };
 
@@ -157,16 +158,22 @@ const addEvent = (day, events) => {
   return event; 
 }
 
-const getCalendar = (calendar, events, location) => {
+const precedentMonthDays = (calendar, location) => {
   const daysInPrevMonth = getPrecedentMonthDays(location);
-  const calendarData = [];
-  let oneWeek = [];
+  const firstWeek = [];
 
   for(let i = 0; i < calendar.firstDay; i++) {
     const dayofMonth = {"dom": daysInPrevMonth - i, prevMonth: true};
-    oneWeek.unshift(dayofMonth);
+    firstWeek.unshift(dayofMonth);
   }
+  return firstWeek;
+}
 
+const getCalendar = (calendar, events, location) => {
+  const calendarData = [];
+  let oneWeek = [];
+
+  oneWeek = [...oneWeek, ...precedentMonthDays(calendar, location)];
   for(let i = 1; i <= calendar.days; i++) {
     oneWeek.push(addEvent(i, events));
     const total = i + calendar.firstDay;
