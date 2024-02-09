@@ -30,6 +30,18 @@ function getMonthNames() {
   ];
 }
 
+function getWeekDays () {
+  return [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
+}
+
 function removeTags(str) {
     if ((str === null) || (str === ''))
         return '';
@@ -249,5 +261,6 @@ export {
   getYearMonth,
   precedentMonthDays,
   getPrecedentMonthDays,
-  addEvent
+  addEvent,
+  getWeekDays
 };
