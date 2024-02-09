@@ -2,13 +2,9 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation } from "react-router-dom";
 import { events } from "assets/events";
 import { getCalendar, getImageList } from "components/helpers";
-import { Game, DefaultDate } from "components/types";
+import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
 import Week from "components/Week";
-
-type MonthProps = {
-  calendar: DefaultDate;
-};
 
 const Month: React.FC<MonthProps> = ({ calendar }) => {
   

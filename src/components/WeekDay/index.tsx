@@ -1,15 +1,6 @@
 import React from 'react';
 import './styles.css';
-import { Game, Images } from "components/types";
-
-type WeekDayProps = {
-  game?: Game;
-  week: number;
-  gameSelected: Game | null;
-  setWeekSelected: (week: number | null) => void;
-  setGameSelected: (game: Game | null) => void;
-  images: Images;
-};
+import { WeekDayProps } from "components/types";
 
 const WeekDay: React.FC<WeekDayProps> = ({
   game,

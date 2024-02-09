@@ -1,12 +1,6 @@
 import React from 'react';
 import './styles.css';
-import { DefaultDate } from "components/types";
-
-type SelectorProps = {
-  calendar: DefaultDate;
-  prevMonth: () => void;
-  nextMonth: () => void;
-};
+import { SelectorProps } from "components/types";
 
 const Selector: React.FC<SelectorProps> = ({
   calendar,

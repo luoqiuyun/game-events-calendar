@@ -1,12 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import './styles.css';
 import { nthNumber, getMonthNames, removeTags } from "./helpers";
-import { Game, Images } from "components/types";
-
-type SelectedGameProps = {
-  game: Game;
-  images: Images;
-};
+import { SelectedGameProps } from "components/types";
 
 const SelectedGame: React.FC<SelectedGameProps> = ({ game, images }) => {
   const [width, setWidth] = useState<number>(window.innerWidth);

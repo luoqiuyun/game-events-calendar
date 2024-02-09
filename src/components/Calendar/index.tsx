@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { prev, next } from "components/helpers";
-import { DefaultDate } from "components/types";
+import { CalendarProps } from "components/types";
 import Selector from "components/Selector";
 import Weekdays from "components/Weekdays";
 import Month from "components/Month";
-
-type CalendarProps = {
-  calendar: DefaultDate;
-  setCalenda: Function;
-};
 
 const Calendar: React.FC<CalendarProps> = ({calendar, setCalenda}) => {
   const navigate = useNavigate();
