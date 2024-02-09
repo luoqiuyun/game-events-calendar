@@ -244,5 +244,10 @@ export {
   daysInMonth,
   nthNumber,
   getMonthNames,
-  removeTags
+  removeTags,
+  isValidPathName,
+  getYearMonth,
+  precedentMonthDays,
+  getPrecedentMonthDays,
+  addEvent
 };
