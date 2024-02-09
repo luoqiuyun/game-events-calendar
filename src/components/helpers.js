@@ -146,6 +146,17 @@ const getPrecedentMonthDays = (location) => {
   return daysInMonth(year, month);
 };
 
+const addEvent = (day, events) => {
+  const addEvent = Math.random() > 0.7;
+  const eventIdx = Math.floor(Math.random() * events.length);
+
+  let event = {"dom": day, prevMonth: false};
+  if (!!addEvent) {
+    return {...events[eventIdx], ...event};
+  }
+  return event; 
+}
+
 const getCalendar = (calendar, events, location) => {
   const daysInPrevMonth = getPrecedentMonthDays(location);
   const calendarData = [];
@@ -157,17 +168,7 @@ const getCalendar = (calendar, events, location) => {
   }
 
   for(let i = 1; i <= calendar.days; i++) {
-    const addEvent = Math.random() > 0.7;
-    const eventIdx = Math.floor(Math.random() * events.length);
-
-    if (!!addEvent) {
-      const event = {...events[eventIdx], "dom": i, prevMonth: false};
-      oneWeek.push(event);
-    } else {
-      const dayofMonth = {"dom": i, prevMonth: false};
-      oneWeek.push(dayofMonth);
-    }
-
+    oneWeek.push(addEvent(i, events));
     const total = i + calendar.firstDay;
     if (!(total % 7)) {
       calendarData.push(oneWeek);
