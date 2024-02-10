@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.css';
-import { WeekDayProps } from "components/types";
+import { WeekDayProps, Images } from "components/types";
+import { getImageList } from "components/helpers";
 
 const WeekDay: React.FC<WeekDayProps> = ({
   game,
   week,
-  images,
   gameSelected,
   setWeekSelected,
   setGameSelected
@@ -13,7 +13,8 @@ const WeekDay: React.FC<WeekDayProps> = ({
   
   const thumb = game && game.imageFilenameThumb ? game.imageFilenameThumb : 'none';
   const addEvent = thumb !== 'none';
-  const imgUrl = images.find(element => element.includes(thumb)) || '';
+  const eventImages: Images = getImageList();
+  const imgUrl = eventImages.find(element => element.includes(thumb)) || '';
 
   let cardClass = addEvent ? "card game-event" : "card";
   cardClass = !!game && !game.prevMonth ? cardClass:`${cardClass} prev-month`;

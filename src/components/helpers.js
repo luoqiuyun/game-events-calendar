@@ -12,6 +12,18 @@ function nthNumber(dayOfMonth) {
   }
 };
 
+function getWeekDays () {
+  return [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
+}
+
 function getMonthNames() {
   return [
     "none",
@@ -27,18 +39,6 @@ function getMonthNames() {
     "October",
     "November",
     "December"
-  ];
-}
-
-function getWeekDays () {
-  return [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday'
   ];
 }
 
@@ -89,7 +89,6 @@ const isValidLocation = (location) => {
 function getImageList() {
   const images = require.context('assets/img', true);
   const imageList = images.keys().map(image => images(image));
-
   return imageList;
 }
 
@@ -117,7 +116,6 @@ const getDefaultDate = () => {
   const month = new Date().getMonth() + 1;
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
-
   return {
     days: parseInt(days),
     firstDay: parseInt(firstDay),
@@ -133,7 +131,6 @@ const getPathDate = (location) => {
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
   const parsedMonth = parseInt(month);
-
   return {
     days: parseInt(days),
     firstDay: parseInt(firstDay),
@@ -145,15 +142,12 @@ const getPathDate = (location) => {
 function selectedDate(location, prevLocation) {
   const { pathname } = location;
   const { pathname: prevPathname } = prevLocation;
-
   const isValidPath = isValidPathName(pathname);
   const isValidPrevPath = isValidPathName(prevPathname);
-
   if (!isValidPath && !isValidPrevPath) {
     window.history.back();
     return getDefaultDate();
   }
-
   return getPathDate(!isValidPath ? prevLocation : location);
 };
 
@@ -162,10 +156,8 @@ const next = (calendar) => {
   let month = calendar.month;
   year = month !== 0 ? year : year + 1;
   month = month === 11 ? 0 : month + 1;
-
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
-
   return { days, firstDay, month, year };
 }
 
@@ -174,37 +166,29 @@ const prev = (calendar) => {
   let month = calendar.month;
   year = month !== 1 ? year : year - 1;
   month = month === 0 ? 11 : month - 1;
-
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
-
   return { days, firstDay, month, year };
 }
 
 const getPrecedentMonthDays = (location) => {
   let { year, month } = getPathDate(location);
   month -= 1;
-  year = month !== 1
-    ? year
-    : year - 1;
+  year = month !== 1 ? year : year - 1;
   return daysInMonth(year, month);
 };
 
 const addEvent = (day, events) => {
   const addEvent = Math.random() > 0.7;
   const eventIdx = Math.floor(Math.random() * events.length);
-
   let event = {"dom": day, prevMonth: false};
-  if (!!addEvent) {
-    return {...events[eventIdx], ...event};
-  }
+  if (!!addEvent) return {...events[eventIdx], ...event};
   return event; 
 }
 
 const precedentMonthDays = (calendar, location) => {
   const daysInPrevMonth = getPrecedentMonthDays(location);
   const firstWeek = [];
-
   for(let i = 0; i < calendar.firstDay; i++) {
     const dayofMonth = {"dom": daysInPrevMonth - i, prevMonth: true};
     firstWeek.unshift(dayofMonth);
@@ -215,7 +199,6 @@ const precedentMonthDays = (calendar, location) => {
 const getCalendar = (calendar, events, location) => {
   const calendarData = [];
   let oneWeek = [];
-
   oneWeek = [...oneWeek, ...precedentMonthDays(calendar, location)];
   for(let i = 1; i <= calendar.days; i++) {
     oneWeek.push(addEvent(i, events));
