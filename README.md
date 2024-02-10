@@ -13,7 +13,9 @@ that displays upcoming video games launches. [Google Share Link](https://drive.g
 - Visiting an invalid date (pathname) will be redirected to the current date
 - client-side algorithm for events placement within the calendar cells
 - Clicking on a calendar event opens a simple view showing details of the event
+- Node.js
 - react.js
+- react dom
 - react router
 - typescript
 - CSS Grid

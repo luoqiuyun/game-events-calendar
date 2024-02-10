@@ -160,15 +160,9 @@ function selectedDate(location, prevLocation) {
 const next = (calendar) => {
   let year = calendar.year;
   let month = calendar.month;
+  year = month !== 0 ? year : year + 1;
+  month = month === 11 ? 0 : month + 1;
 
-  if (month === 0) {
-    year += 1;
-    month += 1;
-  } else if(month === 11) {
-    month = 0;
-  } else {
-    month += 1;
-  }
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
 
@@ -178,15 +172,9 @@ const next = (calendar) => {
 const prev = (calendar) => {
   let year = calendar.year;
   let month = calendar.month;
+  year = month !== 1 ? year : year - 1;
+  month = month === 0 ? 11 : month - 1;
 
-  if (month === 1) {
-    year -= 1;
-    month -= 1;
-  } else if (month === 0) {
-    month = 11;
-  } else {
-    month -= 1;
-  }
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
 
