@@ -30,7 +30,7 @@ function getMonthNames() {
   ];
 }
 
-function getWeekDays () {
+function getWeekDays() {
   return [
     'Sunday',
     'Monday',
@@ -87,8 +87,28 @@ const isValidLocation = (location) => {
 };
 
 function getImageList() {
-  const images = require.context('assets/img', true);
-  const imageList = images.keys().map(image => images(image));
+  //const images = require.context('assets/img', true);
+  //const imageList = images.keys().map(image => images(image));
+  const imageList = [
+    "fall-guys__16x9.webp",
+    "fall-guys__1x1.webp",
+    "final-fantasy-xvi__16x9.jpeg",
+    "final-fantasy-xvi__1x1.webp",
+    "gran-turismo-7__16x9.webp",
+    "gran-turismo-7__1x1.webp",
+    "hogwarts-legacy__16x9.webp",
+    "hogwarts-legacy__1x1.webp",
+    "hotline-miami__16x9.webp",
+    "hotline-miami__1x1.webp",
+    "megaman-11__16x9.webp",
+    "megaman-11__1x1.webp",
+    "metal-gear-solid__16x9.webp",
+    "metal-gear-solid__1x1.jpeg",
+    "resident-evil-4__16x9.webp",
+    "resident-evil-4__1x1.webp",
+    "spiderman-2__16x9.webp",
+    "spiderman-2__1x1.webp"
+  ];
 
   return imageList;
 }

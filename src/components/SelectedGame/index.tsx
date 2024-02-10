@@ -57,7 +57,7 @@ const SelectedGame: React.FC<SelectedGameProps> = ({ game, images }) => {
 
   return (
     <div className="selected-container">
-      <div className="selected" style={{backgroundImage: `url(${imgUrl})`}}>
+      <div className="selected" style={{backgroundImage: `url(${"/assets/" + imgUrl})`}}>
         <div className="about-event">
           <div 
             className="Description"

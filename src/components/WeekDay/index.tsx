@@ -34,7 +34,7 @@ const WeekDay: React.FC<WeekDayProps> = ({
     <div role="button"
       className={cardClass}
       style={{
-        backgroundImage: `url(${imgUrl})`,
+        backgroundImage: `url(${"/assets/" + imgUrl})`,
         borderRight: border
       }}
       onClick={selectedEvent}
