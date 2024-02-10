@@ -1,15 +1,14 @@
 import React, { useState, useEffect} from 'react';
 import './styles.css';
-import { nthNumber, getMonthNames, removeTags, getImageList } from "components/helpers";
-import { SelectedGameProps, Images } from "components/types";
+import { nthNumber, getMonthNames, removeTags } from "components/helpers";
+import { SelectedGameProps } from "components/types";
 
 const SelectedGame: React.FC<SelectedGameProps> = ({ game, images }) => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
 
   const full = game && game.imageFilenameFull ? game.imageFilenameFull : 'none';
-  const eventImages: Images = getImageList();
-  const imgUrl = eventImages.find(element => element.includes(full)) || '';
+  const imgUrl = images.find(element => element.includes(full)) || '';
   const months = getMonthNames();
 
   const windowResize = () =>
