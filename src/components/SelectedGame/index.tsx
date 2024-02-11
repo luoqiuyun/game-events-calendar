@@ -66,8 +66,8 @@ const SelectedGame: React.FC<SelectedGameProps> = ({ game, images }) => {
           </div>
           <div className="pre-order">
             <div className="available">Available {dateAvailable()}</div>
-            <button className="button learn-more" onClick={openLearnMorePage}>Learn More</button>
-            <button className="button pre-order-now" onClick={openPurchasePage}>Pre Order Now</button>
+            <button className="button learn-more" onClick={openLearnMorePage} disabled>Learn More</button>
+            <button className="button pre-order-now" onClick={openPurchasePage} disabled>Pre Order Now</button>
           </div>
         </div>
       </div>
