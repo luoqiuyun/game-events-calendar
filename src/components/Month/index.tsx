@@ -11,7 +11,6 @@ const Month: React.FC<MonthProps> = ({ calendar }) => {
   const [weekSelected, setWeekSelected] = useState<number | null>(null);
   const [gameSelected, setGameSelected] = useState<Game | null>(null);
   const [games, setGames] = useState<Game[]>(JSON.parse(events));
-  const eventImages = getImageList();
   const location = useLocation();
 
   useEffect(() => {
@@ -43,14 +42,14 @@ const Month: React.FC<MonthProps> = ({ calendar }) => {
           <Week
             week={i}
             days={week}
-            images={eventImages}
+            images={getImageList()}
             gameSelected={gameSelected}
             setWeekSelected={setWeekSelected}
             setGameSelected={setGameSelected}
           />
           {weekSelected === i
             && gameSelected
-            && <SelectedGame game={gameSelected} images={eventImages} />
+            && <SelectedGame game={gameSelected} images={getImageList()} />
           }
         </React.Fragment>
       )}
