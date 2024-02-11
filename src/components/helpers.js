@@ -102,7 +102,6 @@ const isValidPathName = (pathname) => {
   const month = parseInt(params[2]);
   if (!isValidYear(year)) return false;
   if (!isValidMonth(month)) return false;
-
   return true;
 };
 
@@ -135,7 +134,6 @@ const getDefaultDate = () => {
   const month = new Date().getMonth() + 1;
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
-
   return {
     days: parseInt(days),
     firstDay: parseInt(firstDay),
@@ -147,11 +145,9 @@ const getDefaultDate = () => {
 const getPathDate = (location) => {
   let { year, month } = getYearMonth(location);
   if(!year || !month) return getDefaultDate();
-
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
   const parsedMonth = parseInt(month);
-
   return {
     days: parseInt(days),
     firstDay: parseInt(firstDay),
@@ -163,15 +159,12 @@ const getPathDate = (location) => {
 function selectedDate(location, prevLocation) {
   const { pathname } = location;
   const { pathname: prevPathname } = prevLocation;
-
   const isValidPath = isValidPathName(pathname);
   const isValidPrevPath = isValidPathName(prevPathname);
-
   if (!isValidPath && !isValidPrevPath) {
     window.history.back();
     return getDefaultDate();
   }
-
   return getPathDate(!isValidPath ? prevLocation : location);
 };
 
@@ -180,10 +173,8 @@ const next = (calendar) => {
   let month = calendar.month;
   year = month !== 0 ? year : year + 1;
   month = month === 11 ? 0 : month + 1;
-
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
-
   return { days, firstDay, month, year };
 }
 
@@ -192,10 +183,8 @@ const prev = (calendar) => {
   let month = calendar.month;
   year = month !== 1 ? year : year - 1;
   month = month === 0 ? 11 : month - 1;
-
   const days = daysInMonth(year, month);
   const firstDay = firstDayInMonth(year, month);
-
   return { days, firstDay, month, year };
 }
 
@@ -211,7 +200,6 @@ const getPrecedentMonthDays = (location) => {
 const addEvent = (day, events) => {
   const addEvent = Math.random() > 0.7;
   const eventIdx = Math.floor(Math.random() * events.length);
-
   let event = {"dom": day, prevMonth: false};
   if (!!addEvent) {
     return {...events[eventIdx], ...event};
@@ -219,10 +207,9 @@ const addEvent = (day, events) => {
   return event; 
 }
 
-const precedentMonthDays = (calendar, location) => {
+const precedentMonth = (calendar, location) => {
   const daysInPrevMonth = getPrecedentMonthDays(location);
   const firstWeek = [];
-
   for(let i = 0; i < calendar.firstDay; i++) {
     const dayofMonth = {"dom": daysInPrevMonth - i, prevMonth: true};
     firstWeek.unshift(dayofMonth);
@@ -233,8 +220,7 @@ const precedentMonthDays = (calendar, location) => {
 const getCalendar = (calendar, events, location) => {
   const calendarData = [];
   let oneWeek = [];
-
-  oneWeek = [...oneWeek, ...precedentMonthDays(calendar, location)];
+  oneWeek = [...oneWeek, ...precedentMonth(calendar, location)];
   for(let i = 1; i <= calendar.days; i++) {
     oneWeek.push(addEvent(i, events));
     const total = i + calendar.firstDay;
@@ -265,7 +251,7 @@ export {
   removeTags,
   isValidPathName,
   getYearMonth,
-  precedentMonthDays,
+  precedentMonth,
   getPrecedentMonthDays,
   addEvent,
   getWeekDays
