@@ -10,7 +10,7 @@ const Month: React.FC<MonthProps> = ({ calendar }) => {
   
   const [weekSelected, setWeekSelected] = useState<number | null>(null);
   const [gameSelected, setGameSelected] = useState<Game | null>(null);
-  const [games, setGames] = useState<Game[]>(JSON.parse(events));
+  const [games, setGames] = useState<Game[]>([]);
   const location = useLocation();
 
   useEffect(() => {
