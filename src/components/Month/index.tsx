@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation } from "react-router-dom";
-import { events } from "assets/events";
 import { getCalendar, getImageList } from "components/helpers";
 import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
