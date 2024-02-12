@@ -5,22 +5,11 @@ import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
 import Week from "components/Week";
 
-const Month: React.FC<MonthProps> = ({ calendar }) => {
+const Month: React.FC<MonthProps> = ({ calendar, games }) => {
   
   const [weekSelected, setWeekSelected] = useState<number | null>(null);
   const [gameSelected, setGameSelected] = useState<Game | null>(null);
-  const [games, setGames] = useState<Game[]>([]);
   const location = useLocation();
-
-  useEffect(() => {
-    fetch('/api/games')
-    .then(response => {
-      if (response.ok) return response.json();
-      return Promise.reject(response);
-    })
-    .then(data => setGames(data))
-    .catch((response) => {});
-  }, []);
 
   useEffect(() => {
     setWeekSelected(null);

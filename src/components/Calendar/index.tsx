@@ -6,7 +6,7 @@ import Selector from "components/Selector";
 import Weekdays from "components/Weekdays";
 import Month from "components/Month";
 
-const Calendar: React.FC<CalendarProps> = ({calendar, setCalenda}) => {
+const Calendar: React.FC<CalendarProps> = ({games, calendar, setCalenda}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,6 +37,7 @@ const Calendar: React.FC<CalendarProps> = ({calendar, setCalenda}) => {
       <hr />
       <Weekdays />
       <Month
+        games={games}
         calendar={calendar}
       />
     </div>
