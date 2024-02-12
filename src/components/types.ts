@@ -22,13 +22,11 @@ type Images = string[];
 type Calendar = Game[][];
 
 type CalendarProps = {
-  games: Game[];
   calendar: DefaultDate;
   setCalenda: Function;
 };
 
 type MonthProps = {
-  games: Game[];
   calendar: DefaultDate;
 };
 

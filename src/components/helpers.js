@@ -161,7 +161,10 @@ function selectedDate(location, prevLocation) {
   const { pathname: prevPathname } = prevLocation;
   const isValidPath = isValidPathName(pathname);
   const isValidPrevPath = isValidPathName(prevPathname);
-  if (!isValidPath && !isValidPrevPath) window.history.back();
+  if (!isValidPath && !isValidPrevPath) {
+    window.history.back();
+    return getDefaultDate();
+  }
   return getPathDate(!isValidPath ? prevLocation : location);
 };
 
