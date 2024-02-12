@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import './styles.css';
 import { prev, next } from "components/helpers";
 import { CalendarProps } from "components/types";
 import Selector from "components/Selector";
@@ -29,12 +30,12 @@ const Calendar: React.FC<CalendarProps> = ({games, calendar, setCalenda}) => {
 
   return (
     <div className="calendar-container">
+      <div className="place-holder" />
       <Selector
         calendar={calendar}
         prevMonth={prevMonth}
         nextMonth={nextMonth}
       />
-      <hr />
       <Weekdays />
       <Month
         games={games}
