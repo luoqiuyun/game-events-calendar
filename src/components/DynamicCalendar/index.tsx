@@ -11,6 +11,7 @@ import {
 } from "components/helpers";
 
 const DynamicCalendar: React.FC = () => {
+  const [updated, setUpdated] = useState<boolean>(false);
   const [games, setGames] = useState<Game[]>([]);
   const [calendar, setCalenda] = useState<DefaultDate>(getDefaultDate());
   const location = useLocation();
@@ -18,13 +19,18 @@ const DynamicCalendar: React.FC = () => {
 
   useEffect(() => {
     const { pathname } = location;
-    if(pathname.length === 1) return;
+    if(pathname.length === 1) {
+      setUpdated(true);
+      return;
+    }
     if (!isValidLocation(location) && !isValidLocation(prevLocation))
       window.history.back();
     setCalenda(selectedDate(location, prevLocation));
+    setUpdated(true);
   }, []);
 
   useEffect(() => {
+    if(updated && !!games.length) return;
     fetch('/api/games')
     .then(response => {
       if (response.ok) return response.json();
@@ -35,11 +41,15 @@ const DynamicCalendar: React.FC = () => {
   }, [calendar]);
 
   return (
-    <EventsCalendar
-      games={games}
-      calendar={calendar}
-      setCalenda={setCalenda}
-    />
+    <>
+      {updated &&
+        <EventsCalendar
+          games={games}
+          calendar={calendar}
+          setCalenda={setCalenda}
+        />
+      }
+    </>
   );
 };
 
