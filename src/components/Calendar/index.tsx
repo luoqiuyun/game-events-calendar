@@ -11,13 +11,11 @@ const Calendar: React.FC<CalendarProps> = ({games, calendar, setCalenda}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const month = calendar.month !== 0
-      ? calendar.month
-      : 12;
-    const queryParam = `/${calendar.year}/${month}`;
+    const { month, year } = calendar
+    const queryParam = `/${year}/${month !== 0 ? month : 12}`;
     navigate(queryParam, {replace:true});
   }, [calendar, navigate]);
-
+  
   const nextMonth = () => {
     const nextDate = next(calendar);
     setCalenda(nextDate);
