@@ -19,7 +19,8 @@ const DynamicCalendar: React.FC = () => {
   useEffect(() => {
     const { pathname } = location;
     if(pathname.length === 1) return;
-    if (!isValidLocation(location)) window.history.back();
+    if (!isValidLocation(location) && !isValidLocation(prevLocation))
+      window.history.back();
     setCalenda(selectedDate(location, prevLocation));
   }, []);
 
