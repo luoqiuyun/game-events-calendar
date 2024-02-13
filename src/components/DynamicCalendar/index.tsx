@@ -19,14 +19,19 @@ const DynamicCalendar: React.FC = () => {
 
   useEffect(() => {
     const { pathname } = location;
-    if(pathname.length === 1) {
+
+    const timeoutId = setTimeout(() => {
       setUpdated(true);
+    }, 150);
+
+    if(pathname.length === 1) {
       return;
     }
     if (!isValidLocation(location) && !isValidLocation(prevLocation))
       window.history.back();
+
     setCalenda(selectedDate(location, prevLocation));
-    setUpdated(true);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
