@@ -188,9 +188,7 @@ const prev = (calendar) => {
 const getPrecedentMonthDays = (location) => {
   let { year, month } = getPathDate(location);
   month -= 1;
-  year = month !== 1
-    ? year
-    : year - 1;
+  year = month !== 1 ? year : year - 1;
   return daysInMonth(year, month);
 };
 
