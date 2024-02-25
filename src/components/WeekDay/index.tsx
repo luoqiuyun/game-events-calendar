@@ -24,11 +24,11 @@ const WeekDay: React.FC<WeekDayProps> = ({
   cardClass = !!game && !game.prevMonth ? cardClass:`${cardClass} prev-month`;
 
   const border = selected
-    ? `3px solid rgba(30, 144, 255, 0.4)`
+    ? `3px solid rgba(30, 144, 255, 0.3)`
     : 'none';
 
   const gradient = selected
-    ? `rgba(255,255,255,0.5)`
+    ? `rgba(255,255,255,0.3)`
     : 'rgba(255,255,255,0)';
 
   const selectedEvent = () => {
