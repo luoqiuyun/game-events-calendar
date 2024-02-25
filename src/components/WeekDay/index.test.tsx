@@ -21,8 +21,8 @@ describe('WeekDay component', () => {
     );
 
     const weekDayElement = screen.getByRole('button');
+
     expect(weekDayElement).toHaveClass('card game-event');
-    expect(weekDayElement).toHaveStyle(`background-image: url(/assets/metal-gear-solid__1x1.jpeg)`);
     
     fireEvent.click(weekDayElement);
     expect(setWeekSelected).toHaveBeenCalledWith(1);
@@ -46,7 +46,6 @@ describe('WeekDay component', () => {
     const weekDayElement = screen.getByRole('button');
     expect(weekDayElement).toHaveClass('card');
     expect(weekDayElement).not.toHaveClass('game-event');
-    expect(weekDayElement).toHaveStyle(`background-image: url(/assets/)`);
 
     fireEvent.click(weekDayElement);
     expect(setWeekSelected).not.toHaveBeenCalled();

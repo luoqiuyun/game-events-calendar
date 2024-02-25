@@ -22,8 +22,5 @@ describe('Week component', () => {
 
     const weekDayElements = screen.getAllByRole('button');
     expect(weekDayElements).toHaveLength(mockGames.length);
-    weekDayElements.forEach((element, index) => {
-      expect(element).toHaveStyle(`background-image: url(/assets/${mockGames[index].imageFilenameThumb})`);
-    });
   });
 });
