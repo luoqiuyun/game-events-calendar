@@ -13,23 +13,21 @@ const WeekDay: React.FC<WeekDayProps> = ({
   
   const thumb = game && game.imageFilenameThumb ? game.imageFilenameThumb : 'none';
   const addEvent = thumb !== 'none';
-  const imgUrl = `/assets/` + images.find(element => element.includes(thumb)) || '';
+  const selected = addEvent
+    && game
+    && gameSelected
+    && gameSelected.dom === game.dom
 
+  const imgUrl = `/assets/` + images.find(element => element.includes(thumb)) || '';
   const testId = !!game ? game.dom : '';
   let cardClass = addEvent ? "card game-event" : "card";
   cardClass = !!game && !game.prevMonth ? cardClass:`${cardClass} prev-month`;
 
-  const border = addEvent
-    && game
-    && !!gameSelected
-    && gameSelected.dom === game.dom
+  const border = selected
     ? `3px solid rgba(30, 144, 255, 0.4)`
     : 'none';
 
-  const gradient = addEvent
-    && game
-    && !!gameSelected
-    && gameSelected.dom === game.dom
+  const gradient = selected
     ? `rgba(255,255,255,0.5)`
     : 'rgba(255,255,255,0)';
 
