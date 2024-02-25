@@ -23,7 +23,8 @@ const WeekDay: React.FC<WeekDayProps> = ({
     && game
     && !!gameSelected
     && gameSelected.dom === game.dom
-    ? `3px solid rgba(30, 144, 255, 0.4)` : 'none';
+    ? `3px solid rgba(30, 144, 255, 0.4)`
+    : 'none';
 
   const gradient = addEvent
     && game
