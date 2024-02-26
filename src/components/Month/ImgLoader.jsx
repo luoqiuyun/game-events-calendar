@@ -1,8 +1,10 @@
 import React from 'react';
 import { getImageList } from "components/helpers";
 
-const FullImg = ({ display }) => {
-  const fullImg = getImageList().filter(image => image.includes('16x9'));
+const ImgLoader = ({ images, display }) => {
+  const fullImg = images.filter(image =>
+    image.includes('16x9')
+  );
 
   return (
     <>
@@ -19,4 +21,4 @@ const FullImg = ({ display }) => {
   );
 };
 
-export default FullImg;
+export default ImgLoader;

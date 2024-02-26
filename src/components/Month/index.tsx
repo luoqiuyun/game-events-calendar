@@ -3,13 +3,14 @@ import { useLocation } from "react-router-dom";
 import { getCalendar, getImageList } from "components/helpers";
 import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
-import FullImg from "./FullImg";
+import ImgLoader from "./ImgLoader";
 import Week from "components/Week";
 
 const Month: React.FC<MonthProps> = ({ calendar, games }) => {
   
   const [weekSelected, setWeekSelected] = useState<number | null>(null);
   const [gameSelected, setGameSelected] = useState<Game | null>(null);
+  const images = getImageList();
   const location = useLocation();
 
   useEffect(() => {
@@ -34,19 +35,22 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
           <Week
             week={i}
             days={week}
-            images={getImageList()}
+            images={images}
             gameSelected={gameSelected}
             setWeekSelected={setWeekSelected}
             setGameSelected={setGameSelected}
           />
           <SelectedGame
             game={gameSelected}
-            images={getImageList()}
+            images={images}
             weekSelected={isSelected(i)}
           />
         </React.Fragment>
       )}
-      <FullImg display={"none"} />
+      <ImgLoader
+        images={images}
+        display={"none"}
+      />
     </div>
   );
 };
