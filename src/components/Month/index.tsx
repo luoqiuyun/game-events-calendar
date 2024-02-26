@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { getCalendar, getImageList } from "components/helpers";
 import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
+import FullImg from "./FullImg";
 import Week from "components/Week";
 
 const Month: React.FC<MonthProps> = ({ calendar, games }) => {
@@ -45,6 +46,7 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
           />
         </React.Fragment>
       )}
+      <FullImg display={"none"} />
     </div>
   );
 };

@@ -31,7 +31,6 @@ const SelectedGame: React.FC<SelectedGameProps> = ({ game, images, weekSelected 
       {!!weekSelected &&
         <div className="selected-container">
           <div className="selected" style={{backgroundImage: `url(/assets/${imgUrl})`}}>
-            <img src={`/assets/${imgUrl}`} style={{display: "none"}} />
             <div className="about-event">
               <div 
                 className="Description"
