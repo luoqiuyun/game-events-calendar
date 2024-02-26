@@ -23,6 +23,9 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
       location
   ), [ calendar, games, location ]);
 
+  const isSelected = (week: number) => 
+    weekSelected === week && !!gameSelected;
+
   return (
     <div className="month-container">
       {selectedCalendar.map((week, i) =>
@@ -35,10 +38,11 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
             setWeekSelected={setWeekSelected}
             setGameSelected={setGameSelected}
           />
-          {weekSelected === i
-            && gameSelected
-            && <SelectedGame game={gameSelected} images={getImageList()} />
-          }
+          <SelectedGame
+            game={gameSelected}
+            images={getImageList()}
+            weekSelected={isSelected(i)}
+          />
         </React.Fragment>
       )}
     </div>

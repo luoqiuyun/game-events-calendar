@@ -33,8 +33,9 @@ type MonthProps = {
 };
 
 type SelectedGameProps = {
-  game: Game;
+  game: Game | null;
   images: Images;
+  weekSelected: boolean;
 };
 
 type SelectorProps = {
@@ -66,7 +67,6 @@ export type {
   Calendar,
   Images,
   DefaultDate,
-
   CalendarProps,
   MonthProps,
   SelectedGameProps,
