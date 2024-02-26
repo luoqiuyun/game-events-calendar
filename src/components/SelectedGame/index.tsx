@@ -3,7 +3,6 @@ import './styles.css';
 import { SelectedGameProps } from "components/types";
 
 import {
-  nthNumber,
   removeTags,
   descFormat,
   dateAvailable,

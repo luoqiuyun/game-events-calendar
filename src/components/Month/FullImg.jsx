@@ -11,6 +11,7 @@ const FullImg = ({ display }) => {
           <img
             src={`/assets/${imgUrl}`}
             style={{display: display}}
+            alt={`${imgUrl}`}
           />
         </React.Fragment>
       )}
