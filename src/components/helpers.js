@@ -67,6 +67,24 @@ function getImageList() {
   return imageList;
 }
 
+function descFormat(game) {
+  let title: string;
+  if (game.title.indexOf(':') > -1) {
+    const titleSegments = game.title.split(':');
+    title = titleSegments[0].toUpperCase() + ': ' + titleSegments[1];
+  } else {
+    title = game.title.toUpperCase();
+  }
+  return title;
+}
+
+function descResponsive (isMobile) {
+  return {
+    width: !isMobile ? '420px' : '290px',
+    fontSize: !isMobile ? '12px' : '12px',
+  }
+}
+
 function removeTags(str) {
     if ((str === null) || (str === ''))
         return '';
@@ -154,6 +172,15 @@ const getPathDate = (location) => {
     month: parsedMonth !== 12 ? parsedMonth : 0,
     year: parseInt(year)
   };
+};
+
+const dateAvailable = (day) => {
+  const { pathname } = window.location;
+  const params = pathname.split('/');
+  const year = params[1];
+  const month = parseInt(params[2]);
+  const months = getMonthNames();
+  return `${months[month]} ${day}${nthNumber(day)}, ${year}`;
 };
 
 function selectedDate(location, prevLocation) {
@@ -249,5 +276,8 @@ export {
   precedentMonth,
   getPrecedentMonthDays,
   addEvent,
-  getWeekDays
+  getWeekDays,
+  dateAvailable,
+  descFormat,
+  descResponsive
 };
