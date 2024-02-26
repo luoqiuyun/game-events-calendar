@@ -6,7 +6,6 @@ import {
   nthNumber,
   removeTags,
   descFormat,
-  toggleStyles,
   dateAvailable,
   descResponsive
 } from "components/helpers";

@@ -67,22 +67,6 @@ function getImageList() {
   return imageList;
 }
 
-const mountedStyle = { animation: "inAnimation 250ms ease-in" };
-const unmountedStyle = {
-  animation: "outAnimation 270ms ease-out",
-  animationFillMode: "forwards"
-};
-
-function toggleStyles () {
-  return {
-    mountedStyle: { animation: "inAnimation 250ms ease-in" },
-    unmountedStyle: {
-      animation: "outAnimation 270ms ease-out",
-      animationFillMode: "forwards"
-    }
-  };
-}
-
 function descFormat(game) {
   let title: string;
   if (game.title.indexOf(':') > -1) {
@@ -295,6 +279,5 @@ export {
   getWeekDays,
   dateAvailable,
   descFormat,
-  descResponsive,
-  toggleStyles
+  descResponsive
 };
