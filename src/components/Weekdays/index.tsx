@@ -3,6 +3,7 @@ import './styles.css';
 import { getWeekDays } from "components/helpers";
 
 const Weekdays: React.FC = () => {
+  
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
   const windowResize = () => setWidth(window.innerWidth);

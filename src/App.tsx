@@ -6,7 +6,10 @@ const App: React.FC = () => {
 
   return (
     <Routes>
-      <Route path="*" element={<DynamicCalendar />} />
+      <Route
+        path="*"
+        element={<DynamicCalendar />}
+      />
     </Routes>
   );
 };
