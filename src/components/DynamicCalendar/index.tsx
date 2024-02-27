@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
-import { DefaultDate } from "components/types";
 import { Game } from "components/types";
+import { DefaultDate } from "components/types";
 import EventsCalendar from "components/Calendar";
 import usePrevLocation from "./usePrevLocation";
 import {
@@ -11,6 +11,7 @@ import {
 } from "components/helpers";
 
 const DynamicCalendar: React.FC = () => {
+
   const [updated, setUpdated] = useState<boolean>(false);
   const [games, setGames] = useState<Game[]>([]);
   const [calendar, setCalenda] = useState<DefaultDate>(getDefaultDate());
@@ -18,7 +19,10 @@ const DynamicCalendar: React.FC = () => {
   const prevLocation = usePrevLocation(location);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => setUpdated(true), 150);
+    const timeoutId = setTimeout(() => {
+      setUpdated(true);
+    }, 150);
+
     const { pathname } = location;
 
     if(pathname.length === 1) return;

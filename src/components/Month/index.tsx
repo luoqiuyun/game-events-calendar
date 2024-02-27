@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import { getCalendar, getImageList } from "components/helpers";
 import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
-import ImgLoader from "./ImgLoader";
 import Week from "components/Week";
+import ImgLoader from "./ImgLoader";
 
 const Month: React.FC<MonthProps> = ({ calendar, games }) => {
   

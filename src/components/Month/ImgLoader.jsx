@@ -1,21 +1,17 @@
-import React from 'react';
-import { getImageList } from "components/helpers";
-
 const ImgLoader = ({ images, display }) => {
-  const fullImg = images.filter(image =>
+  const fullImgs = images.filter(image =>
     image.includes('16x9')
   );
 
   return (
     <>
-      {fullImg.map((imgUrl, i) =>
-        <React.Fragment key={`week-${i}`}>
-          <img
-            src={`/assets/${imgUrl}`}
-            style={{display: display}}
-            alt={`${imgUrl}`}
-          />
-        </React.Fragment>
+      {fullImgs.map((imgUrl, i) =>
+        <img
+          key={`fullimg-${i}`}
+          src={`/assets/${imgUrl}`}
+          style={{display: display}}
+          alt={`${imgUrl}`}
+        />
       )}
     </>
   );

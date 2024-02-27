@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import './styles.css';
-import { prev, next } from "components/helpers";
 import { CalendarProps } from "components/types";
+import { prev, next } from "components/helpers";
 import Selector from "components/Selector";
 import Weekdays from "components/Weekdays";
 import Month from "components/Month";
 
-const Calendar: React.FC<CalendarProps> = ({games, calendar, setCalenda}) => {
+const Calendar: React.FC<CalendarProps> = ({
+  games,
+  calendar,
+  setCalenda
+}) => {
+
   const navigate = useNavigate();
 
   useEffect(() => {
