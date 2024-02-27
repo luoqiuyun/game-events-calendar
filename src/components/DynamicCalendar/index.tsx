@@ -43,7 +43,7 @@ const DynamicCalendar: React.FC = () => {
     })
     .then(data => setGames(data))
     .catch((response) => {});
-  }, [calendar]);
+  }, [calendar, games, updated]);
 
   return (
     <>

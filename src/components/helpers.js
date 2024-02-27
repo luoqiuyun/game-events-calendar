@@ -80,8 +80,9 @@ function descFormat(game) {
 
 function descResponsive (isMobile) {
   return {
-    width: !isMobile ? '420px' : '290px',
-    fontSize: !isMobile ? '12px' : '12px',
+    width: !isMobile ? '35%' : '75%',
+    minWidth: !isMobile ? '520px' : '290px',
+    fontSize: !isMobile ? '14px' : '12px',
   }
 }
 
