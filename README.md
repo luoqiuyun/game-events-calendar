@@ -11,14 +11,17 @@ that displays upcoming video games launches. [Google Share Link](https://drive.g
 - URL driven dynamic events calendar in a "Monthly" view
 - Provide 'Previous' and 'Next' buttons to allow navigation between months
 - Visiting an invalid date (pathname) will be redirected to the current date
+- Month Selector stay in place when scrolling
 - client-side algorithm for events placement within the calendar cells
 - Clicking on a calendar event opens a simple view showing details of the event
+- HTML, CSS
 - Node.js
 - react.js
 - react dom
 - react router
 - typescript
 - CSS Grid
+- Full images pre loading avoid game details loading latency
 - unit testing with RTL and Jest
 - JAMstack Serverless with Netlify function API services
 

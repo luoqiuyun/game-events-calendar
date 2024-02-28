@@ -13,7 +13,7 @@ const DetailsFullImages = ({ images }) => {
           className="event-img-loader"
           key={`full-event-img-${index}`}
           src={`/assets/${imgUrl}`}
-          alt={`Full game photo ${imgUrl}`}
+          alt={`Full game details ${imgUrl}`}
         />
       )}
     </>

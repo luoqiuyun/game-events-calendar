@@ -15,9 +15,19 @@ const Selector: React.FC<SelectorProps> = ({
 
   return (
     <div className="selector-container">
-      <div className="prev" onClick={() => prevMonth()}>&#8249;</div>
-      <div className="year-month">{getMonthNames()[month] + ' ' + calendar.year}</div>
-      <div className="next" onClick={() => nextMonth()}>&#8250;</div>
+      <div
+        className="prev"
+        data-testid={`prev-month`}
+        onClick={() => prevMonth()}
+      >&#8249;</div>
+      <div className="year-month">
+        {getMonthNames()[month] + ' ' + calendar.year}
+      </div>
+      <div
+        className="next"
+        data-testid={`next-month`}
+        onClick={() => nextMonth()}
+      >&#8250;</div>
     </div>
   );
 };
