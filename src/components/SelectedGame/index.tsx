@@ -41,7 +41,9 @@ const SelectedGame: React.FC<SelectedGameProps> = ({
               >{descFormat(game)} {removeTags(!!game ? game.summary : '')}
               </div>
               <div className="pre-order">
-                <div className="available">Available {dateAvailable(!!game ? game.dom : '')}</div>
+                <div className="available">
+                  Available {dateAvailable(!!game ? game.dom : '')}
+                </div>
                 <button
                   className="button learn-more"
                   onClick={() => window.open(!!game ? game.learnMoreLink : '', '_blank')}>
