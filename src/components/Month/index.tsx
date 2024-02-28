@@ -4,7 +4,6 @@ import { getCalendar, getImageList } from "components/helpers";
 import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
 import Week from "components/Week";
-import ImgLoader from "./ImgLoader";
 
 const Month: React.FC<MonthProps> = ({ calendar, games }) => {
   
@@ -47,10 +46,6 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
           />
         </React.Fragment>
       )}
-      <ImgLoader
-        images={images}
-        display={"none"}
-      />
     </div>
   );
 };

@@ -16,9 +16,9 @@ const SelectedGame: React.FC<SelectedGameProps> = ({
 }) => {
 
   const [width, setWidth] = useState<number>(window.innerWidth);
-  const isMobile = width <= 768;
   const full = game && game.imageFilenameFull ? game.imageFilenameFull : 'none';
   const imgUrl = images.find(element => element.includes(full)) || 'none';
+  const isMobile = width <= 768;
 
   const windowResize = () =>
     setWidth(window.innerWidth);

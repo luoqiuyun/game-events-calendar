@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import './styles.css';
 import { CalendarProps } from "components/types";
-import { prev, next } from "components/helpers";
+import { prev, next, getImageList } from "components/helpers";
 import Selector from "components/Selector";
 import Weekdays from "components/Weekdays";
 import Month from "components/Month";
+import DetailsFullImages from "./DetailsFullImages";
 
 const Calendar: React.FC<CalendarProps> = ({
   games,
@@ -13,6 +14,7 @@ const Calendar: React.FC<CalendarProps> = ({
   setCalenda
 }) => {
 
+  const images = getImageList();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,6 +46,7 @@ const Calendar: React.FC<CalendarProps> = ({
         games={games}
         calendar={calendar}
       />
+      <DetailsFullImages images={images} />
     </div>
   );
 };
