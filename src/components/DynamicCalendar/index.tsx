@@ -19,9 +19,10 @@ const DynamicCalendar: React.FC = () => {
   const prevLocation = usePrevLocation(location);
 
   useEffect(() => {
+    /*
     const timeoutId = setTimeout(() => {
       setUpdated(true);
-    }, 800);
+    }, 760);*/
 
     const { pathname } = location;
 
@@ -31,7 +32,7 @@ const DynamicCalendar: React.FC = () => {
       window.history.back();
 
     setCalenda(selectedDate(location, prevLocation));
-    return () => clearTimeout(timeoutId);
+    //return () => clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
@@ -43,8 +44,13 @@ const DynamicCalendar: React.FC = () => {
     })
     .then(data => setGames(data))
     .catch((response) => {});
-  }, [calendar, games, updated]);
+  }, [games, updated]);
 
+  useEffect(() => {
+    if(!games.length) return;
+    setUpdated(true);
+  }, [games]);
+  
   return (
     <>
       {updated &&
