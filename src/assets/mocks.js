@@ -1,3 +1,13 @@
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+];
+
 const mockImages = [
   "fall-guys__16x9.webp",
   "fall-guys__1x1.webp",
@@ -39,6 +49,25 @@ const mockWeekImages = [
   "spiderman-2__16x9",
   "spiderman-2__1x1"
 ];
+
+const mockCalendar = {
+  days: 31,
+  firstDay: 1,
+  year: 2024,
+  month: 1
+};
+
+const mockGame = {
+  id: "7060050195c6b3a514f7358",
+  launchDate: "2023-06-20T14:36:38.034Z",
+  title: 'Test Game: The Adventure',
+  summary: 'This is a test game summary.',
+  imageFilenameThumb: "fall-guys__1x1",
+  imageFilenameFull: "fall-guys__16x9",
+  learnMoreLink: "https://www.playstation.com/en-us/games/fall-guys-ultimate-knockout/",
+  purchaseLink: "https://www.playstation.com/en-us/games/fall-guys-ultimate-knockout/#buy-now",
+  dom: 15,
+};
 
 const mockGames = [
   {
@@ -497,4 +526,12 @@ const mockWeeks = [
 ];
 
 
-export { mockGames, mockImages, mockWeekImages, mockWeeks };
+export {
+  mockGame,
+  mockGames,
+  mockImages,
+  mockWeekImages,
+  mockWeeks,
+  daysOfWeek,
+  mockCalendar
+};

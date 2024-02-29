@@ -1,12 +1,10 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom'; // needed if useLocation is used inside the component
+import { BrowserRouter as Router } from 'react-router-dom';
 import { getCalendar, getImageList } from "components/helpers";
-import { mockWeeks, mockGames} from 'assets/test-mocks'
+import { mockGames, mockCalendar } from 'assets/mocks'
 import Month from './index';
 import * as helpers from 'components/helpers';
-
-const mockCalendar = {"days":29,"firstDay":4,"month":2,"year":2024};
 
 describe('Month Component', () => {
 

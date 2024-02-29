@@ -1,12 +1,12 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import { daysOfWeek } from 'assets/mocks'
 import Weekdays from './index';
 
 describe('Weekdays component', () => {
   test('renders all days of the week', () => {
     render(<Weekdays />);
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     
     daysOfWeek.forEach(day => {
       const dayElement = screen.getByText(day);
