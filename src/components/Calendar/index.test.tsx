@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
 import { next, prev, getImageList } from 'components/helpers';
-import { mockGames, mockCalendar } from 'assets/mocks'
+import { mockGames, mockCalendar, daysOfWeek } from 'assets/mocks'
 import Calendar from './index';
 
 const renderCalendar = (props = {}) => {
@@ -19,8 +19,19 @@ const renderCalendar = (props = {}) => {
   return {...utils};
 };
 
-it('renders without crashing', () => {
+it('renders all weekdays without crashing - method 1', () => {
   const { getByText } = renderCalendar();
+
+  daysOfWeek.forEach(day => {
+    const dayElement = getByText(day);
+    expect(dayElement).toBeInTheDocument();
+    expect(dayElement).toHaveClass('week-day');
+  });
+});
+
+it('renders all weekdays without crashing - method 2', () => {
+  const { getByText } = renderCalendar();
+
   expect(getByText(/Sunday/i)).toBeInTheDocument();
   expect(getByText(/Monday/i)).toBeInTheDocument();
   expect(getByText(/Tuesday/i)).toBeInTheDocument();
