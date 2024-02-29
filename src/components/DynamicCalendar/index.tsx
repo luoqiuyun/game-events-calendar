@@ -21,7 +21,7 @@ const DynamicCalendar: React.FC = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setUpdated(true);
-    }, 600);
+    }, 1000);
 
     const { pathname } = location;
 
