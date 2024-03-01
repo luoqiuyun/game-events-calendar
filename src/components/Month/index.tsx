@@ -4,6 +4,7 @@ import { getCalendar, getImageList } from "components/helpers";
 import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
 import Week from "components/Week";
+import CalendarFadeIn from "./CalendarFadeIn";
 
 const Month: React.FC<MonthProps> = ({ calendar, games }) => {
   
@@ -28,25 +29,27 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
     weekSelected === week && !!gameSelected;
 
   return (
-    <div className="month-container">
-      {selectedCalendar.map((week, i) =>
-        <React.Fragment key={`week-${i}`}>
-          <Week
-            week={i}
-            days={week}
-            images={images}
-            gameSelected={gameSelected}
-            setWeekSelected={setWeekSelected}
-            setGameSelected={setGameSelected}
-          />
-          <SelectedGame
-            game={gameSelected}
-            images={images}
-            weekSelected={isSelected(i)}
-          />
-        </React.Fragment>
-      )}
-    </div>
+    <CalendarFadeIn>
+      <div className="month-container">
+        {selectedCalendar.map((week, i) =>
+          <React.Fragment key={`week-${i}`}>
+            <Week
+              week={i}
+              days={week}
+              images={images}
+              gameSelected={gameSelected}
+              setWeekSelected={setWeekSelected}
+              setGameSelected={setGameSelected}
+            />
+            <SelectedGame
+              game={gameSelected}
+              images={images}
+              weekSelected={isSelected(i)}
+            />
+          </React.Fragment>
+        )}
+      </div>
+    </CalendarFadeIn>
   );
 };
 
