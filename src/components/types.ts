@@ -1,3 +1,5 @@
+import React from "react";
+
 type Game = {
   id: string;
   launchDate: string;
@@ -62,6 +64,14 @@ type WeekDayProps = {
   images: Images;
 };
 
+interface DetailsFullImagesProps {
+  images: string[];
+}
+
+interface CalendarFadeInProps {
+  children: React.ReactNode;
+}
+
 export type {
   Game,
   Calendar,
@@ -73,4 +83,6 @@ export type {
   SelectorProps,
   WeekProps,
   WeekDayProps,
+  DetailsFullImagesProps,
+  CalendarFadeInProps,
 };

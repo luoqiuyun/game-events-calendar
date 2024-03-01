@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { CalendarFadeInProps } from "components/types";
 
-function CalendarFadeIn({ children }) {
+const CalendarFadeIn: React.FC<CalendarFadeInProps> = ({ children }) => {
   return (
     <motion.div
       initial="hidden"
