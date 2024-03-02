@@ -68,7 +68,7 @@ interface DetailsFullImagesProps {
   images: string[];
 }
 
-interface CalendarFadeInProps {
+interface MonthLoadingEffectProps {
   children: React.ReactNode;
 }
 
@@ -84,5 +84,5 @@ export type {
   WeekProps,
   WeekDayProps,
   DetailsFullImagesProps,
-  CalendarFadeInProps,
+  MonthLoadingEffectProps,
 };

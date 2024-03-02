@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CalendarFadeInProps } from "components/types";
+import { MonthLoadingEffectProps } from "components/types";
 
-const CalendarFadeIn: React.FC<CalendarFadeInProps> = ({ children }) => {
+const MonthLoadingEffect: React.FC<MonthLoadingEffectProps> = ({ children }) => {
   return (
     <motion.div
       initial="hidden"
@@ -19,4 +19,4 @@ const CalendarFadeIn: React.FC<CalendarFadeInProps> = ({ children }) => {
   );
 }
 
-export default CalendarFadeIn;
+export default MonthLoadingEffect;

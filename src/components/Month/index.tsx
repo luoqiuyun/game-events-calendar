@@ -4,7 +4,7 @@ import { getCalendar, getImageList } from "components/helpers";
 import { Game, MonthProps } from "components/types";
 import SelectedGame from "components/SelectedGame";
 import Week from "components/Week";
-import CalendarFadeIn from "./CalendarFadeIn";
+import MonthLoadingEffect from "./MonthLoadingEffect";
 
 const Month: React.FC<MonthProps> = ({ calendar, games }) => {
   
@@ -29,7 +29,7 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
     weekSelected === week && !!gameSelected;
 
   return (
-    <CalendarFadeIn>
+    <MonthLoadingEffect>
       <div className="month-container">
         {selectedCalendar.map((week, i) =>
           <React.Fragment key={`week-${i}`}>
@@ -49,7 +49,7 @@ const Month: React.FC<MonthProps> = ({ calendar, games }) => {
           </React.Fragment>
         )}
       </div>
-    </CalendarFadeIn>
+    </MonthLoadingEffect>
   );
 };
 
