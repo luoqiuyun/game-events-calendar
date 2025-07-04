@@ -1,7 +1,7 @@
 # PlayStation Games Events Calendar with React v18
 [Luo, Qiu Yun](https://deft-souffle-6bce77.netlify.app/)
 
-A React 18 & TypeScript‑based interactive monthly calendar showcasing upcoming PlayStation game release events. [Google Share Link](https://drive.google.com/drive/folders/1PtpkEH0ysG5HvHpdPKjzr0ZrV30At9X3?usp=sharing)
+A React 18 & TypeScript‑based interactive monthly calendar showcasing upcoming PlayStation game release events.
 
 **Summary:**
 - URL‑based month navigation (`/2025/7`, `/2025/8`, etc.)
@@ -85,6 +85,17 @@ Deployed on Netlify, leveraging serverless functions for API services.
 - Surface-Pro7
 
 
+## 🚀 Quick Start 
+To run the project locally:
+
+```bash
+git clone https://github.com/luoqiuyun/game-events-calendar.git
+npm install
+npm run dev
+npm test
+```
+
+
 ## 🔄 Live Demo
 
 - https://deft-souffle-6bce77.netlify.app/
@@ -112,9 +123,9 @@ I’m currently open to remote or contract-first opportunities where I can bring
 
 ## 🔗 Screenshots
 
-![Screenshot](screenshot.png)
+![PlayStation Games Events Calendar Screenshot](./screenshot.png)
 
-![Screenshot](screenshot2.png)
+![PlayStation Games Events Calendar Screenshot](./screenshot2.png)
 
 
 # Getting Started with Create React App
