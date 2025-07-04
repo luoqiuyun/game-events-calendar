@@ -1,12 +1,45 @@
-# React v18 Dynamic Events Calendar
-[Luo, Qiu Yun](https://cool-sawine-66ea12.netlify.app/)
+# PlayStation Games Events Calendar with React v18
+[Luo, Qiu Yun](https://deft-souffle-6bce77.netlify.app/)
 
-This is to create a calendar UI of a calendar application 
-that displays upcoming video games launches. [Google Share Link](https://drive.google.com/drive/folders/1PtpkEH0ysG5HvHpdPKjzr0ZrV30At9X3?usp=sharing)
+A React 18 & TypeScript‑based interactive monthly calendar showcasing upcoming PlayStation game release events. [Google Share Link](https://drive.google.com/drive/folders/1PtpkEH0ysG5HvHpdPKjzr0ZrV30At9X3?usp=sharing)
+
+**Summary:**
+- URL‑based month navigation (`/2025/7`, `/2025/8`, etc.)
+- Prev/Next month controls
+- Automatic redirect on invalid months
+- Client‑side event placement
+- Clickable event cards with modal detail
+- Unit tests and CI‑ready
+
+**Live Demo:** [See it in action and try it yourself](https://deft-souffle-6bce77.netlify.app/)  
+**Tech Stack:** React, React Router, TypeScript, CSS Grid, Netlify Functions, Unit Testing  
+**Technologies:** React/JavaScript/TypeScript, HTML, CSS, and other aspects of UI
+
+
+## 🚀 App Features: PlayStation Games Events Calendar
+- 📅 Dynamic URL-driven Events Calendar:
+Monthly calendar view dynamically reflects the URL path (e.g., /2025/7 for July 2025).
+- 🔄 Seamless Month Navigation:
+Users can navigate between months using Previous and Next buttons.
+- 🚫 Invalid Path Handling:
+Visiting an invalid date or pathname automatically redirects users to the current month.
+- 🧩 Client-side Event Placement Algorithm:
+Efficiently calculates and displays multiple game events within the correct calendar cells.
+- 🔍 Interactive Event Details:
+Clicking on a calendar event opens a simple pop-up/detail view showing the game's information.
+- ⚛️ Built with Modern Web Technologies:
+    - React.js (with React Router for navigation)
+    - TypeScript for robust type safety
+    - CSS Grid for responsive and flexible layout
+- ✅ Unit Testing:
+Ensures reliability and correctness of key components.
+- 🌐 JAMstack Architecture with Serverless Functions:
+Deployed on Netlify, leveraging serverless functions for API services.
+
+
 
 #
-## App Features
-
+## 🎯 Tech
 - Responsive
 - URL driven dynamic events calendar in a "Monthly" view
 - Provide 'Previous' and 'Next' buttons to allow navigation between months
@@ -23,12 +56,16 @@ that displays upcoming video games launches. [Google Share Link](https://drive.g
 - CSS Grid
 - Full images pre loading avoid game details loading latency
 - unit testing with RTL and Jest
-- JAMstack Serverless with Netlify function API services
+- JAMstack Serverless with Netlify function API services  
 
-The above features were implemented in order to compliant to the assignment requirments:
-- Mastery of React/JavaScript/TypeScript, HTML, CSS, and other aspects of UI 
 
-## Tested on latest
+## 🧪 Tests
+- Calendar rendering
+- Event placement logic
+- Navigation / redirect handling
+
+
+## ✅ Tested on latest
 
 - Chrome
 - Edge
@@ -48,23 +85,37 @@ The above features were implemented in order to compliant to the assignment requ
 - Surface-Pro7
 
 
-### [DEMO](https://cool-sawine-66ea12.netlify.app/)
+## 🔄 Live Demo
 
-- https://cool-sawine-66ea12.netlify.app/
-
-- https://cool-sawine-66ea12.netlify.app/2023/12
-
-- https://cool-sawine-66ea12.netlify.app/2025/2
-
-- https://cool-sawine-66ea12.netlify.app/1991/9
-
-- https://cool-sawine-66ea12.netlify.app/2023/99
+- https://deft-souffle-6bce77.netlify.app/
+- https://deft-souffle-6bce77.netlify.app/2024/12
+- https://deft-souffle-6bce77.netlify.app/2025/11
+- https://deft-souffle-6bce77.netlify.app/1991/9
+- https://deft-souffle-6bce77.netlify.app/2024/99
 
 
-## Screenshots
+## 🔮 Future Plans
+- Genre filtering
+- Lazy‑loading assets
+- Improved accessibility
+
+
+## 🙋‍♂️ About Me
+Hi, I’m Qiu Yun Luo — a passionate Frontend Engineer with over 10 years of experience building scalable, interactive web applications. I specialize in React, TypeScript, and modern web technologies, with a keen eye for UI/UX design and performance optimization.
+
+I enjoy crafting beautiful, functional user experiences and have a strong belief that frontend development is more than just UI—it's about recreating reality in digital form. I’m also experienced in deploying JAMstack applications and working with serverless architectures.
+
+I’m currently open to remote or contract-first opportunities where I can bring both technical leadership and hands-on coding to the team.
+
+👉 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/qiuyun/) or check out more of my work on [GitHub](https://github.com/luoqiuyun).
+
+
+## 🔗 Screenshots
 
 ![Screenshot](screenshot.png)
+
 ![Screenshot](screenshot2.png)
+
 
 # Getting Started with Create React App
 
@@ -74,6 +125,10 @@ For this app, I made use of react.js and Serverless pattern with Netlify to crea
 
 
 ## Available Scripts
+
+Getting Started
+
+### git clone https://github.com/luoqiuyun/game-events-calendar.git
 
 In the project directory, you can run:
 
